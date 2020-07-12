@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_study/AnimatedContainer.dart';
 import 'package:flutter_tutorial_study/AnimatedOpacity.dart';
 import 'package:flutter_tutorial_study/Drawer.dart';
+import 'package:flutter_tutorial_study/OrientationBuilder.dart';
 import 'package:flutter_tutorial_study/SnackBar.dart';
 
 void main() {
@@ -75,6 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return MyStackBar();
+    return MyOrientation();
   }
 }
