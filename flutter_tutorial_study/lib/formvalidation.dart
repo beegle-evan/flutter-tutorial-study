@@ -6,7 +6,23 @@ class MyFormValidation extends StatefulWidget {
 }
 
 class _MyFormValidationState extends State<MyFormValidation> {
-  final _formKey = GlobalKey<FormState>(); // 위젯을 나타내는 유니크한 값, form의 상태를 알 수 있
+  final _formKey = GlobalKey<FormState>(); // 위젯을 나타내는 유니크한 값, form의 상태를 알 수 있스
+  FocusNode nameFocusNode;
+
+  final nameController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    nameFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    nameFocusNode.dispose();
+    nameController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +60,38 @@ class _MyFormValidationState extends State<MyFormValidation> {
               }
             },
             child: Text('완료'),),
+          ),
+          TextField(
+            controller: nameController,
+            onChanged: (text) {
+              print(text);
+            },
+            // TextField에는 validate 기능이 없음
+            focusNode: nameFocusNode,
+            autofocus: true,
+            decoration: InputDecoration(
+              hintText: '이름을 입력해 주세요',
+              border: InputBorder.none,
+              labelText: '이'
+            ),
+          ),
+          RaisedButton(
+            onPressed: () {
+              FocusScope.of(context).requestFocus(nameFocusNode);
+            },
+              child: Text('포커스'),
+          ),
+          RaisedButton(
+            onPressed: () {
+              print(nameController.text);
+              showDialog(context: context,
+              builder: (context) {
+                return AlertDialog(
+                    content: Text(nameController.text)
+                );
+              });
+            },
+            child: Text('TextField 값 확인'),
           )
         ],
       ),
