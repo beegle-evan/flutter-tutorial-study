@@ -4,6 +4,7 @@ import 'package:flutter_tutorial_study/AnimatedOpacity.dart';
 import 'package:flutter_tutorial_study/Drawer.dart';
 import 'package:flutter_tutorial_study/OrientationBuilder.dart';
 import 'package:flutter_tutorial_study/SnackBar.dart';
+import 'package:flutter_tutorial_study/SwipeToDismiss.dart';
 import 'package:flutter_tutorial_study/formvalidation.dart';
 import 'package:flutter_tutorial_study/tabcontroller.dart';
 
@@ -117,6 +118,13 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MyFormValidation()));
+          },
+        ),
+        ListTile(
+          title: Text('SwipeToDismiss'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MySwipeToDismiss()));
           },
         ),
       ],
