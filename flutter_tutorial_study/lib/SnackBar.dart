@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class MyStackBar extends StatefulWidget {
+class MySnackBar extends StatefulWidget {
   @override
-  _MyStackBarState createState() => _MyStackBarState();
+  _MySnackBarState createState() => _MySnackBarState();
 }
 
-class _MyStackBarState extends State<MyStackBar> {
+class _MySnackBarState extends State<MySnackBar> {
   bool _visible = false;
 
   @override
