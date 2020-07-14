@@ -4,6 +4,7 @@ import 'package:flutter_tutorial_study/AnimatedOpacity.dart';
 import 'package:flutter_tutorial_study/Drawer.dart';
 import 'package:flutter_tutorial_study/OrientationBuilder.dart';
 import 'package:flutter_tutorial_study/SnackBar.dart';
+import 'package:flutter_tutorial_study/formvalidation.dart';
 import 'package:flutter_tutorial_study/tabcontroller.dart';
 
 void main() {
@@ -109,6 +110,13 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MyTabController()));
+          },
+        ),
+        ListTile(
+          title: Text('FormValidation'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyFormValidation()));
           },
         ),
       ],
