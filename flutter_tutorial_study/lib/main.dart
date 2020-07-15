@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial_study/AnimatedContainer.dart';
 import 'package:flutter_tutorial_study/AnimatedOpacity.dart';
 import 'package:flutter_tutorial_study/Drawer.dart';
+import 'package:flutter_tutorial_study/MethodChannel.dart';
 import 'package:flutter_tutorial_study/OrientationBuilder.dart';
 import 'package:flutter_tutorial_study/SnackBar.dart';
 import 'package:flutter_tutorial_study/SwipeToDismiss.dart';
@@ -125,6 +126,13 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MySwipeToDismiss()));
+          },
+        ),
+        ListTile(
+          title: Text('MethodChannel'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyMethodChannel()));
           },
         ),
       ],
