@@ -7,24 +7,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_tutorial_study/example-mise/models/AirResult.dart';
 
 import 'package:flutter_tutorial_study/main.dart';
+import 'package:http/http.dart' as http;
+
+import 'dart:convert'; // json.decode 사용을 위해서,,
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+  test('http 통신 테스트',() async {
+    var response = await http.get('https://api.airvisual.com/v2/nearest_city?key=2ebd7fda-9660-443f-b637-66eb33174453');
+    expect(response.statusCode, 200);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    AirResult result = AirResult.fromJson(json.decode(response.body));
+    expect(result.status, 'success');
   });
 }
