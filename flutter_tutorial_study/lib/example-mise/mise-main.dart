@@ -26,7 +26,7 @@ class _MiseMainState extends State<MiseMain> {
   AirResult _result;
 
   Future<AirResult> fetchData() async {
-    var response = await http.get('https://api.airvisual.com/v2/nearest_city?key=2ebd7fda-9660-443f-b637-66eb33174453');
+    var response = await http.get('https://api.airvisual.com/v2/nearest_city?key=');
     AirResult result = AirResult.fromJson(json.decode(response.body));
     return result;
   }
