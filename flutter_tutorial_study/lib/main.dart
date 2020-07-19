@@ -6,6 +6,7 @@ import 'package:flutter_tutorial_study/MethodChannel.dart';
 import 'package:flutter_tutorial_study/OrientationBuilder.dart';
 import 'package:flutter_tutorial_study/SnackBar.dart';
 import 'package:flutter_tutorial_study/SwipeToDismiss.dart';
+import 'package:flutter_tutorial_study/example-bloc/BlocPattern.dart';
 import 'package:flutter_tutorial_study/example-mise/mise-main.dart';
 import 'package:flutter_tutorial_study/formvalidation.dart';
 import 'package:flutter_tutorial_study/tabcontroller.dart';
@@ -150,6 +151,13 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => Counter()));
+          },
+        ),
+        ListTile(
+          title: Text('Example-Bloc'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyBloc()));
           },
         ),
       ],
