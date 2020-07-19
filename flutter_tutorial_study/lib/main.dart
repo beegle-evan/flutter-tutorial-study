@@ -10,6 +10,8 @@ import 'package:flutter_tutorial_study/example-mise/mise-main.dart';
 import 'package:flutter_tutorial_study/formvalidation.dart';
 import 'package:flutter_tutorial_study/tabcontroller.dart';
 
+import 'example-counter/Counter.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -134,13 +136,20 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MyMethodChannel()));
-          },
+         },
         ),
         ListTile(
           title: Text('Example-미세먼지'),
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => MiseApp()));
+          },
+        ),
+        ListTile(
+          title: Text('Example-카운터'),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Counter()));
           },
         ),
       ],
