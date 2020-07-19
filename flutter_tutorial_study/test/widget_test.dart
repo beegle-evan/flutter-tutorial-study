@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_tutorial_study/example-mise/models/AirResult.dart';
+import 'package:flutter_tutorial_study/example-mise/models/air_result.dart';
 
 import 'package:flutter_tutorial_study/main.dart';
 import 'package:http/http.dart' as http;
